@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentacion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <header>
+            SVG
+        </header>
+        <ul>
+            <li>
+                <a class="nav-link" href="#Introduccion">
+                    Introduccion
+                </a>
+            </li>
+
+            <li>
+                <a class="nav-link" href="#Antes_de_empezar">
+                    Antes de empezar
+                </a>
+            </li>
+
+            <li>
+                <a class="nav-link" href="#Grid">
+                    Grid
+                </a>
+            </li>
+
+            <li>
+                <a class="nav-link" href="#Paths">
+                    Paths
+                </a>
+            </li>
+
+            <li>
+                <a class="nav-link" href="#Rellenos_y_trazos">
+                    Rellenos y trazos
+                </a>
+            </li>
+
+            <li>
+                <a class="nav-link" href="#Fuentes_SVG">
+                    Fuentes SVG
+                </a>
+            </li>
+
+        </ul>
+        <footer>
+            <p>Copyright 2022</p>
+        <p>Agustín Astudillo Castañeda</p>
+
+        </footer>
+        
+    </nav>
+    
+    <main id="main-doc">
+
+        
+
+        <section class="main-section" id="Introduccion"> 
+
+            <header>
+                Introduccion
+            </header>
+            <p>
+                SVG es un lenguaje XML, parecido a XHTML, el cual puede ser usado para dibujar gráficos vectoriales, como los mostrados a la derecha. Puede ser usado para crear una imagen ya sea especificando todas las líneas y formas necesarias, modificando las imágenes matriciales (raster images) o una combinación de ambas. La imagen y sus componentes pueden ser transformados, compuestos o filtrados para cambiar completamente su apariencia.
+            </p>
+            <p>
+                SVG surgió en 1999 después de que varios formatos compitieran y fueran propuestos a la W3C los cuales fallaron para ser completamente ratificados. SVG es soportado por los principales navegadores. Un inconveniente es que cargar un SVG puede ser lento. SVG ofrecen beneficios, algunos de los cuales incluyen tener una interfaz DOM disponible para éste, y no requerir extensiones de terceros. Usarlo o no a menudo dependerá de tu caso específico de uso.
+            </p>
+            <p>
+                HTML provee elementos que definen encabezados, párrafos, tablas, etc. En forma muy similar, SVG provee elementos para círculos, rectángulos, y curvas simples y complejas. Un documento SVG simple consiste de nada más que el elemento raíz < svg > y varias formas básicas que construyen todas juntas un gráfico. En adición está el elemento < g >, el cual es usado para agrupar varias formas básicas.
+            </p>
+            <p>
+                SVG es soportado en todo navegador moderno e incluso hasta un par de versiones anteriores en algunos casos. Una tabla bastante completa de soporte por navegadores puede verse <a href="https://caniuse.com/svg">aquí</a>. Firefox ha soportado algo de contenido SVG desde su versión 1.5 y el nivel de soporte ha ido creciendo con cada versión desde entonces. Con algo de optimismo, junto con este tutorial, MDN puede ayudar a los desarrolladores a estar al tanto de las diferencias entre Gecko y algunas de las otras implementaciones mas importantes.
+            </p>
+
+        </section>
+
+        <section class="main-section" id="Antes_de_empezar">
+
+            <header>
+                Antes de empezar
+            </header>
+            <p>
+                Existe un número de programas de dibujo disponibles como Inkscape los cuales son gratis y usan SVG como su formato nativo. Sin embargo, este tutorial se basará en el confiable XML o editor de texto (a tu criterio). La idea es enseñar el funcionamiento interno de SVG a aquellos que desean comprenderlo, y eso se logra mejor ensuciando tus manos con un poco de maquetado. De todos modos deberías fijarte tus objetivos. No todos los visores de SVG son iguales por lo que es posible que algo escrito para una aplicación no se verá exactamente igual en otra, simplemente porque soportan diferentes niveles de la especificación SVG u otra especificación que estés utilizando junto con SVG (es decir, JavaScript o CSS).
+            </p>
+           <p>
+            Antes de empezar deberías tener conceptos básicos de XML u otro lenguaje de maquetado como HTML. Si no estás del todo familiarizado con XML, aquí hay algunas máximas a tener presentes:
+           </p>
+           <ul>
+            <li>
+                Los elementos SVG y sus atributos deben ser escritos en la misma capitalización mostrada ya que XML es sensible a mayúsculas (en contraposición a HTML).
+            </li>
+            <li>
+                Los valores de atributos en SVG deben ir entre comillas, incluso si son números.
+            </li>
+           </ul>
+
+        </section>
+
+        <section class="main-section" id="Grid">
+            
+            <header>
+                Grid
+            </header>
+            <p>
+                Para todos los elementos, SVG utiliza un sistema de coordenadas o grid similar al que utiliza canvas (y un montón de otras rutinas de dibujo por ordenador). Es decir, la esquina superior izquierda del documento se considera el punto (0,0), o punto de origen.
+            </p>
+            <p> Las posiciones se miden entonces en píxeles desde la esquina superior izquierda, siendo la dirección "x" positiva hacia la derecha, y la dirección "y" positiva hacia abajo, por ejemplo:</p>
+            <p>
+                The element:
+                <code>
+                    < rect x="0" y="0" width="100" height="100" />
+                </code>
+                defines a rectangle from the upper left corner, that spans from there 100px to the right and to the bottom.
+            </p>
+            
+            
+        </section>
+
+        <section class="main-section" id="Paths">
+
+            <header>
+                Paths
+            </header>
+            <p>
+                El elemento < path > es el más potente de la biblioteca SVG de formas básicas. Puede utilizarse para crear líneas, curvas, arcos y mucho más.
+            </p>
+            <p>
+                Hay cinco comandos de línea para < path >. El primer comando es el "Mover a" o M. Toma dos parámetros, una coordenada (x) y una coordenada (y) a la que moverse. Si el cursor ya estaba en algún lugar de la página, no se dibuja ninguna línea para conectar las dos posiciones. El comando "Mover a" aparece al principio de las rutas para especificar dónde debe comenzar el dibujo. Por ejemplo:
+                <code>
+                    M x y
+                    (or)
+                    m dx dy
+                </code>
+            </p>
+            <p>
+                Hay tres comandos que dibujan líneas. El más genérico es el comando "Línea a", llamado con L. L toma dos parámetros -coordenadas x e y- y dibuja una línea desde la posición actual hasta una nueva posición.
+                <code>
+                    L x y
+                    (or)
+                    l dx dy
+                </code>
+            </p>
+            <p>
+                Existen dos formas abreviadas para dibujar líneas horizontales y verticales. H dibuja una línea horizontal, y V dibuja una línea vertical. Ambos comandos sólo toman un parámetro ya que sólo se mueven en una dirección.
+                <code>
+                   { H x
+                    (or)
+                    h dx }
+                   
+                   { V y
+                    (or)
+                    v dy}
+                </code>
+            </p>
+            <p>
+                En el siguiente ejemplo sólo hay un punto en (10,10). Tenga en cuenta, sin embargo, que no aparecería si se dibujara un camino normalmente. Por ejemplo:
+
+                <code>
+                    < svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+
+                        < path d="M10 10"/>
+                      
+                        <!-- Points -->
+                        < circle cx="10" cy="10" r="2" fill="red"/>
+                      
+                      </ svg>
+                      
+                </code>
+            </p>
+        </section>
+
+        <section class="main-section" id="Rellenos_y_trazos">
+            <header>
+                Rellenos y trazos
+            </header>
+            <p>
+                Existen diversas maneras para colorear las formas creadas, como lo son:
+            </p>
+            <ul>
+                <li>
+                    Painting
+                </li>
+                <li>
+                    Stroke
+                </li>
+                <li>
+                    Uso de CSS
+                </li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Fuentes_SVG">
+            <header>
+                Fuentes SVG
+            </header>
+            <p>
+                La clave para definir un fuente SVG es el elemento < font >.
+            </p>
+            <p>
+                Comenzamos con el elemento < font >. Éste lleva un atributo id, para poder referenciarlo a través de un URI (véase más adelante). El atributo horiz-adv-x determina la anchura media de un carácter en comparación con las definiciones de trayectoria de los glifos individuales.
+            </p>
+            <p>
+                El valor 1000 establece un valor razonable con el que se puede trabajar. Hay varios atributos adjuntos que ayudan a definir aún más el diseño básico de la caja de glifos.
+            </p>
+            <p>
+                Puede utilizar @font-face para hacer referencia a fuentes remotas (y no tan remotas).
+             
+            </p>
+        </section>
+
+    </main>
+
+    
+  
+    
+</body>
+</html>

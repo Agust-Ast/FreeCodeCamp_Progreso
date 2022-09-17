@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form</title>
+</head>
+<body>
+    <figure id="img-div">
+        <img id="image" src="https://staticg.sportskeeda.com/editor/2022/01/e18ed-16427882442356-1920.jpg" 
+        alt="Idie games"><br>
+        <figcaption id="img-caption"></figcaption> 
+    </figure>
+    <h1 id="title">Formulario de encuesta para desarrollo de juego indie</h1>
+    <p id="description">Esta encuesta tiene como objetivo rescatar los gustos en generos de videojuegos.</p>
+    <form id="survey-form">
+        <label id="name-label" for="name">Nombre</label>
+        <input id="name" type="text" required placeholder="Ingresa tu nombre">
+
+        <label id="email-label" for="email">E-mail</label>
+        <input id="email" type="email" required placeholder="nombre@algo.com">
+
+        <label id="number-label" for="number">Edad</label>
+        <input id="number" type="number" required min="1" max="120" placeholder="20">
+
+        <p id="label_drop">¿Qué rango de precio es aceptable para un videojuego?, seleccione una (valor en dólar)</p>
+        <select id="dropdown" required>
+            <option disabled selected value>Selecciona un rango</option>
+            <option value="1">$1-$10</option>
+            <option value="2">$10-$20</option>
+            <option value="3">$20-$30</option>
+            <option value="4">$30-$40</option>
+            <option value="5">$50 o más</option>
+        </select> 
+
+        <p id="labels_p">¿Qué tan probable es que compres un juego indie?</p>
+        <label>
+            <input name="recomendacion" type="radio" value="muy probable" checked>Muy probable
+        </label>
+        <label>
+            <input name="recomendacion" type="radio" value="probable">Probable
+        </label>
+        <label>
+            <input name="recomendacion" type="radio" value="poco probable">Poco probable
+        </label>
+
+        <p id="labels_p">Elija a continuación los géneros que más te guste</p>
+        <label>
+            <input name="preferencia" value="adventura" type="checkbox">Adventura
+        </label>
+        <label>
+            <input name="preferencia" value="plataforma" type="checkbox">Plataforma
+        </label>
+        <label>
+            <input name="preferencia" value="puzzle" type="checkbox">Puzzle
+        </label>
+        <label>
+            <input name="preferencia" value="FPS" type="checkbox">FPS (First Person Shooter)
+        </label>
+        
+        <p>¿Alguna sugerencia?, te agradeceré si la escribes en el siguiente recuadro:</p>
+        <textarea id="commentario"  name="commentario" placeholder="Escribe tu comentario aquí..."></textarea>
+
+        <button type="submit" id="submit">
+            Submit
+        </button>
+
+
+    </form>
+</body>
+</html>

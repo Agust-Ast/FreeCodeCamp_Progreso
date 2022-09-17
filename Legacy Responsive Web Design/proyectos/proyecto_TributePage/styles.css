@@ -1,0 +1,75 @@
+#image{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: auto;
+    margin: 0 auto;
+    
+    width: 350px;
+    
+}
+
+h1{
+    margin-bottom: 0;
+    text-align: center;
+}
+
+p{
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#img-caption{
+    margin-bottom: 0;
+    text-align: center;
+}
+
+
+#tribute-info{
+    margin-bottom: 0;
+    text-align: center;
+    
+}
+
+ul {
+    text-align: left;
+    list-style: inside;
+  }
+  
+li{
+    text-align: left;
+    margin-bottom: 20px;
+    
+}
+
+#main{
+    font-family: century-gothic, sans-serif;
+    color: black;
+}
+
+
+
+#antorch{
+    max-width: 100%;
+    display: block;
+    max-height: auto;
+    margin: 0 auto;
+    width: 200px;
+}
+
+
+
+section{
+    border: solid;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+}
+
+#perfil{
+    align-self: stretch;
+}
+
+#grad{
+    background-color: rgb(255, 255, 255);
+}
